@@ -14,7 +14,7 @@ mysql = MySQL(app)
 @app.route('/api/', methods=['GET', 'POST'])
 def index():
     return  ('gg')
-@app.route('/api/userdef', methods=['GET', 'POST'])
+@app.route('/api/userdet', methods=['GET', 'POST'])
 def userdef():
     return  ('testttt')
 
