@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #065f23;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.login {
+  width: 10%;
+  border-radius: 50%;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 40;
+  overflow-x: hidden;
+  padding-top: 50px;
+
+}
+
+.left {
+  left: 0;
+  background-color: rgb(43, 110, 4);
+
+}
+
+.right {
+  right: 0;
+  background-color: rgb(0, 255, 149);
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<h2>Login Formxxxxxx</h2>
+
+<form action="/login" method="post">
+  <div class="imgcontainer">
+    <img src="login.png" alt="login_img" class="login">
+  </div>
+  <div><h>Sign in</h></div>
+<div class= "split left">
+  <div class="container">
+    <label for="uname"><b>Username</b><br></label>
+    <input type="text" placeholder="Enter Username" name="uname" required><br>
+    <label for="psw"><b><br>Password</b></label><br>
+    <input type="password" placeholder="Enter Password" name="psw" required><br>
+        
+    <button type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+  <div class="container" style="background-color:#065f23">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+
+</div>
+</form>
+<form action="/signup" method="post">
+  <div class= "split right">
+ 
+    <div class ="container" style="background-image: url('img1.jpg');">
+     bnvbnvbnvvvn bnvbnvbbnvvg  jhggvhjv <br>
+     bnvbnvbnvvvn bnvbnvbbnvvg  jhggvhjv.<br>
+     bnvbnvbnvvvn bnvbnvbbnvvg  jhggvhjv <br>
+     bnvbnvbnvvvn bnvbnvbbnvvg  jhggvhjv.<br>
+     bnvbnvbnvvvn bnvbnvbbnvvg  jhggvhjv <br>
+     bnvbnvbnvvvn bnvbnvbbnvvg  jhggvhjv.<br>
+     bnvbnvbnvvvn bnvbnvbbnvvg  jhggvhjv <br>
+     bnvbnvbnvvvn bnvbnvbbnvvg  jhggvhjv.<br>
+     bnvbnvbnvvvn bnvbnvbbnvvg  jhggvhjv <br>
+     bnvbnvbnvvvn bnvbnvbbnvvg  jhggvhjv.<br>
+     bnvbnvbnvvvn bnvbnvbbnvvg  jhggvhjv <br>
+     bnvbnvbnvvvn bnvbnvbbnvvg  jhggvhjv.<br>
+      <button type="submit"  class="button">Get In Now</button>
+    </div>
+   
+  </div>
+
+ 
+
+</form>
+
+</body>
+</html>

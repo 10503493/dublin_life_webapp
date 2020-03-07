@@ -1,0 +1,456 @@
+<style>
+
+
+body {
+  font: 13px/20px "Lucida Grande", Tahoma, Verdana, sans-serif;
+  color: #404040;
+
+}
+
+.login {
+  position: relative;
+  margin: 30px auto;
+  padding: 20px 20px 20px;
+  width: 310px;
+  background: white;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.login:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+
+.login h1 {
+  margin: -20px -20px 21px;
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  text-shadow: 0 1px white;
+  background: #f3f3f3;
+  border-bottom: 1px solid #cfcfcf;
+  border-radius: 3px 3px 0 0;
+  background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+  -webkit-box-shadow: 0 1px whitesmoke;
+  box-shadow: 0 1px whitesmoke;
+}
+
+.login p {
+  margin: 20px 0 0;
+}
+
+.login p:first-child {
+  margin-top: 0;
+}
+
+.login input[type=text], .login input[type=password] {
+  width: 278px;
+}
+
+.login p.remember_me {
+  float: left;
+  line-height: 31px;
+}
+
+.login p.remember_me label {
+  font-size: 12px;
+  color: #777;
+  cursor: pointer;
+}
+
+.login p.remember_me input {
+  position: relative;
+  bottom: 1px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.login p.submit {
+  text-align: right;
+}
+
+.login-help {
+  margin: 20px 0;
+  font-size: 11px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px #2a85a1;
+}
+
+.login-help a {
+  color: #cce7fa;
+  text-decoration: none;
+}
+
+.login-help a:hover {
+  text-decoration: underline;
+}
+
+:-moz-placeholder {
+  color: #c9c9c9 !important;
+  font-size: 13px;
+}
+
+::-webkit-input-placeholder {
+  color: #ccc;
+  font-size: 13px;
+}
+
+input {
+  font-family: 'Lucida Grande', Tahoma, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+input[type=text], input[type=password] {
+  margin: 5px;
+  padding: 0 10px;
+  width: 200px;
+  height: 34px;
+  color: #404040;
+  background: white;
+  border: 1px solid;
+  border-color: #c4c4c4 #d1d1d1 #d4d4d4;
+  border-radius: 2px;
+  outline: 5px solid #eff4f7;
+  -moz-outline-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  border-color: #7dc9e2;
+  outline-color: #dceefc;
+  outline-offset: 0;
+}
+
+input[type=submit] {
+  padding: 0 18px;
+  height: 29px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #527881;
+  text-shadow: 0 1px #e3f1f1;
+  background: #cde5ef;
+  border: 1px solid;
+  border-color: #b4ccce #b3c0c8 #9eb9c2;
+  border-radius: 16px;
+  outline: 0;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  background-image: -webkit-linear-gradient(top, #edf5f8, #cde5ef);
+  background-image: -moz-linear-gradient(top, #edf5f8, #cde5ef);
+  background-image: -o-linear-gradient(top, #edf5f8, #cde5ef);
+  background-image: linear-gradient(to bottom, #edf5f8, #cde5ef);
+  -webkit-box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px white, 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+input[type=submit]:active {
+  background: #cde5ef;
+  border-color: #9eb9c2 #b3c0c8 #b4ccce;
+  -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.lt-ie9 input[type=text], .lt-ie9 input[type=password] {
+  line-height: 34px;
+}
+
+</style>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="login">
+    <h1>Rent.ie</h1>
+    <form method="post" action="/login">
+      <p><input type="text" name="username" placeholder="Username or Email"></p>
+      <p><input type="text" name="password"  placeholder="Password"></p>
+      <p class="submit"><input type="submit" name="commit" value="Login"></p>
+    </form>
+  </div>
+  
+  <div align="center">
+
+    <a href="/render-user-creation" style="color: blue;">create user</a>
+  </div>
+  
+
+  from flask import Flask,render_template,request
+from flask_mysqldb import MySQL
+from flask import jsonify
+
+app = Flask(__name__)
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'root'
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_DB'] = 'appartments'
+
+
+mysql = MySQL(app)
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    return  render_template('login-page.html')
+
+@app.route('/showList', methods=['GET', 'POST'])
+def lpage():
+    return  render_template('list-page.html')
+
+@app.route('/showReport', methods=['GET', 'POST'])
+def rpage():
+    return  render_template('report-page.html')
+@app.route('/render-user-creation', methods=['GET', 'POST'])
+def renderusercreation():
+    return  render_template('user-creation.html')
+
+@app.route('/login', methods=['POST'])
+def login():
+    usr = request.form.get('username')
+    passw = request.form.get('password')
+    cur = mysql.connection.cursor()
+    cur.execute("select * from user_details where username=%s and password=%s",[usr.strip(),passw.strip()])
+    data = cur.fetchall()
+    cur.close()
+    if len(data) > 0:
+     return render_template('menu-page.html',useridx = data[0][2])
+    else:
+     return render_template('login-page-error.html')
+    
+@app.route('/signup', methods=['POST'])
+def signup():
+    usr = request.form.get('username')
+    passw = request.form.get('password')
+    email = request.form.get('email')
+    cur = mysql.connection.cursor()
+    cur.execute("select * from user_details where username=%s or email=%s",[usr.strip(),email.strip()])
+    data = cur.fetchall()
+
+    if len(data) == 0:
+        cur.execute("insert into user_details (email,username,password) values (%s,%s,%s)",(email,usr,passw))
+        mysql.connection.commit()
+        cur.close()
+        return render_template('login-page.html')
+    else:
+        cur.close()
+        return render_template('user-creation-error.html')   
+
+@app.route('/get-all', methods=['get'])
+def getalldetails():
+    cur = mysql.connection.cursor()
+    cur.execute("select apd.apar_id,apd.name,apd.image_url,apd.image_t_url,apd.bedrooms,apd.floor_area,apd.thermal_isolation,apd.price,apd.details,bk.userid,bk.apar_id,bk.status from apartment_details apd left join  booking bk on  apd.trans_id=bk.booking_id  left  join user_details usr on  bk.userid = usr.userid; "); 
+    data = cur.fetchall()
+    cur.close()
+    return jsonify(data)
+
+@app.route('/get-thermal-unique', methods=['get'])
+def thermal():
+    cur = mysql.connection.cursor()
+    cur.execute("select distinct thermal_isolation from apartment_details"); 
+    data = cur.fetchall()
+    cur.close()
+    return jsonify(data)
+
+@app.route('/get-bedroom-unique', methods=['get'])
+def bedroom():
+    cur = mysql.connection.cursor()
+    cur.execute("select distinct bedrooms  from apartment_details"); 
+    data = cur.fetchall()
+    cur.close()
+    return jsonify(data)
+
+@app.route('/get-area-unique', methods=['get'])
+def area():
+    cur = mysql.connection.cursor()
+    cur.execute("select distinct floor_area  from apartment_details"); 
+    data = cur.fetchall()
+    cur.close()
+    return jsonify(data)
+
+@app.route('/filter', methods=['get'])
+def filter():
+    bedr=  request.args.get('bedroom')
+    ther = request.args.get('thermal')
+    area = request.args.get('area')
+    filterstring = ""
+    
+    if area != "any":
+        # area_f = float(request.args.get('area'))
+        filterstring+=" floor_area ="+ area +" and "
+    else:
+         filterstring+=" floor_area is not null and "
+
+    if ther != "any":
+        # ther_b = bool(request.args.get('thermal'))
+        filterstring +=" thermal_isolation ="+ther+" and "
+    else:
+        filterstring +=" thermal_isolation is not null "
+
+    
+    if bedr != "any":
+        # bedr_i = int(request.args.get('bed'))
+        filterstring +=" bedrooms ="+bedr
+    else:
+        filterstring +=" bedrooms is not null"
+
+        
+    cur = mysql.connection.cursor()
+    cur.execute("select apd.apar_id,apd.name,apd.image_url,apd.image_t_url,apd.bedrooms,apd.floor_area,apd.thermal_isolation,apd.price,apd.details,bk.userid,bk.apar_id,bk.status from apartment_details apd left join  booking bk on  apd.apar_id=bk.apar_id  left  join user_details usr on  bk.userid = usr.userid where"+filterstring); 
+    data = cur.fetchall()
+    cur.close()
+    return jsonify(data)
+
+@app.route('/book', methods=['GET'])
+def updatestatus():
+        userid =  request.args.get('userid')
+        bs = request.args.get('bookstatus')
+        ap_id = request.args.get('apar_id')
+        print(userid)
+        cur = mysql.connection.cursor()
+        cur.execute("""insert into booking (userid,apar_id,status)values (%s,%s,%s);""",(userid,ap_id,bs))
+        cur.execute("update apartment_details set trans_id =%s where apar_id = %s;",(cur.lastrowid,ap_id))
+        mysql.connection.commit()
+        data = cur.fetchall()
+        print(data)
+        return 'success'
+
+@app.route('/get-most-expensive-apart', methods=['get'])
+def getexpensiveapart():
+    userid =  request.args.get('userid')
+    cur = mysql.connection.cursor()
+    cur.execute("select apd.name,apd.image_url,apd.image_t_url,count(apd.apar_id) ,sum(apd.price) from booking bk inner join apartment_details apd on apd.apar_id = bk.apar_id inner join user_details usr on usr.userid = bk.userid  where bk.userid = %s and bk.status = 1 group by apd.apar_id ,apd.name;",(userid)); 
+    data = cur.fetchall()
+    cur.close()
+    return jsonify(data)     
+
+@app.route('/get-frequent-flats', methods=['get'])
+def getfrequentflats():
+    userid =  request.args.get('userid')
+    cur = mysql.connection.cursor()
+    cur.execute("select apd.name,apd.image_url,image_t_url,count(apd.apar_id) ,apd.price from booking bk inner join apartment_details apd on apd.apar_id = bk.apar_id inner join user_details usr on usr.userid = bk.userid  where bk.userid = %s and bk.status = 1 group by apd.apar_id ,apd.name,apd.price order by apd.price",(userid)); 
+    data = cur.fetchall()
+    cur.close()
+    return jsonify(data)    
+
+@app.route('/get-current-apart', methods=['get'])
+def getcurrentaprt():
+    userid =  request.args.get('userid')
+    cur = mysql.connection.cursor()
+    cur.execute("select apd.apar_id,apd.name,apd.image_url,apd.image_t_url,apd.bedrooms,apd.floor_area,apd.thermal_isolation,apd.price,apd.details,bk.userid,bk.apar_id,bk.status from apartment_details apd inner join booking bk on bk.booking_id = apd.trans_id where bk.userid = %s and bk.status = 1",(userid)); 
+    data = cur.fetchall()
+    cur.close()
+    return jsonify(data) 
+
+
+if __name__ == '__main__':
+    app.run()
+
+
+
+
+
+
+
+
+
+
+
+
+
+    SET foreign_key_checks = 0;
+
+DROP TABLE IF EXISTS apartment_details;
+DROP TABLE IF EXISTS user_details;
+DROP TABLE IF EXISTS booking;
+SET foreign_key_checks = 1;
+CREATE TABLE user_details (username VARCHAR(255), password VARCHAR(255),
+userid INT NOT NULL AUTO_INCREMENT,
+email varchar(255),
+name varchar(255),
+address varchar(255),
+phone_no varchar(255),
+PRIMARY KEY(userid));
+
+CREATE TABLE apartment_details (
+apar_id int  NOT NULL AUTO_INCREMENT,
+name VARCHAR(255),
+image_url varchar(255),
+image_t_url varchar(255),
+bedrooms int NOT NULL,
+floor_area int NOT NULL,
+details varchar(255),
+price float,
+thermal_isolation boolean not null default 0,
+trans_id int not null default 0,
+PRIMARY KEY(apar_id));
+
+
+
+create Table booking (
+booking_id int  NOT NULL AUTO_INCREMENT,
+userid int,
+apar_id int,
+status boolean not null default 0,
+FOREIGN KEY (userid) REFERENCES user_details(userid),
+FOREIGN KEY (apar_id) REFERENCES apartment_details(apar_id),
+PRIMARY KEY(booking_id));
+
+
+
+
+insert into apartment_details (name,image_url,image_t_url,bedrooms,floor_area,details,price,thermal_isolation,trans_id) values ('flat_1','flat.jpeg','flat.jpeg',2,345,'good',175000,1,0);
+insert into apartment_details (name,image_url,image_t_url,bedrooms,floor_area,details,price,thermal_isolation,trans_id) values ('flat_2','flat.jpeg','flat.jpeg',1,200,'good',258000,0,0);
+insert into apartment_details (name,image_url,image_t_url,bedrooms,floor_area,details,price,thermal_isolation,trans_id) values ('flat_3','flat.jpeg','flat.jpeg',1,200,'bad',258000,0,0);
+insert into apartment_details (name,image_url,image_t_url,bedrooms,floor_area,details,price,thermal_isolation,trans_id) values ('flat_4','flat.jpeg','flat.jpeg',1,200,'good',28000,0,0);
+insert into apartment_details (name,image_url,image_t_url,bedrooms,floor_area,details,price,thermal_isolation,trans_id) values ('flat_5','flat.jpeg','flat.jpeg',1,200,'good',8000,0,0);
+
+/*******Frequently bought flat***********/
+select apd.name,
+apd.image_url,
+apd.image_t_url,
+count(apd.apar_id) ,
+sum(apd.price) from booking bk 
+inner join apartment_details apd on apd.apar_id = bk.apar_id 
+inner join user_details usr on usr.userid = bk.userid  
+where bk.userid = 1 and bk.status = 1 group by apd.apar_id ,apd.name;  
+
+/***expensive appartments bought**/
+select apd.name,apd.image_url,apd.image_t_url,count(apd.apar_id) ,apd.price from booking bk inner join apartment_details apd on apd.apar_id = bk.apar_id inner join user_details usr on usr.userid = bk.userid  where bk.userid = 1 and bk.status = 1 group by apd.apar_id ,apd.name,apd.price order by apd.price;
+
+/**current flats**/
+select apd.apar_id,apd.name,apd.image_url,apd.image_t_url,apd.bedrooms,apd.floor_area,apd.thermal_isolation,apd.price,apd.details,bk.userid,bk.apar_id,bk.status from apartment_details apd inner join booking bk on bk.booking_id = apd.trans_id where bk.userid = 1 and bk.status = 1;
+
+ 
+
+
+
+
+
+
+                          
+

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+
+
+
+
+div.gallery {
+  margin: 25px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 280px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+div.subgallery
+{
+  margin: 25px;
+  border: 3px solid #ccc;
+  float: left;
+  width: 125px;
+  height: 80px; 
+}
+div.gallerylarge
+{
+  margin: 25px;
+  border: 3px solid #ccc;
+  float: left;
+  width: 500px;
+  height: 333px; 
+}
+div.subgallery:hover 
+{
+  border: 3px solid #777;
+}
+div.detail 
+{
+position: relative;
+}
+</style>
+</head>
+<body>
+
+<h2>Products</h2>
+
+<p>sdsfds dsfdsgdfsgtre jhu8h efvsdghfvyu sdjfdsbfyg sdsfds dsfdsgdfsgtre<br> jhu8h efvsdghfvyu sdjfdsbfyg sdsfds dsfdsgdfsgtre jhu8h efvsdghfvyu sdjfdsbfyg <br>sdsfds dsfdsgdfsgtre jhu8h efvsdghfvyu sdjfdsbfyg .</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="gallery">
+  <a target="_blank" href="test1.html">
+    <img src="p1.jpg" alt="Cinque Terre" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="p1.jpg">
+    <img src="p1.jpg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="p1.jpg">
+    <img src="p1.jpg" alt="Cinque Terre" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="p1.jpg">
+    <img src="p1.jpg" alt="Cinque Terre" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="p1.jpg">
+    <img src="p1.jpg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+
+<div class="gallery">
+  <a target="_blank" href="p1.jpg">
+    <img src="/static/p1.jpg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+
+<div class="gallery">
+  <a target="_blank" href="p1.jpg">
+    <img src="p1.jpg" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="p1.jpg">
+    <img src="p1.jpg" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="p1.jpg">
+    <img src="p1.jpg" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="p1.jpg">
+    <img src="p1.jpg" alt="Northern Lights" >
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div class="gallery">
+  <a target="_blank" href="p1.jpg">
+    <img src="p1.jpg" alt="Mountains" >
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+<div class="gallery">
+  <a target="_blank" href="test1.html">
+    <img src="p1.jpg" alt="Mountains" >
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+<!-- <div class ="detail">
+<div class="gallerylarge"> 
+  <img src="p1.jpg" alt="Mountains">
+</div>
+<div class="subgallery"> 
+  <img src="p1.jpg" alt="Mountains"width="125" height="80">
+  <img src="p1.jpg" alt="Mountains"width="125" height="80">
+  <img src="p1.jpg" alt="Mountains"width="125" height="80">
+  <img src="p1.jpg" alt="Mountains"width="125" height="80">
+</div>
+</div>  -->
+
+
+
+
+<script>
+//  // Get the elements with class="column"
+// var elements = document.getElementsByClassName("column");
+
+// // Declare a loop variable
+// var i;
+
+// // List View
+// function listView()
+//  {
+//   for (i = 0; i < elements.length; i++) {
+//     elements[i].style.width = "100%";
+//   }
+// }
+
+// // Grid View
+// function gridView() 
+// {
+//   for (i = 0; i < elements.length; i++) {
+//     elements[i].style.width = "50%";
+//   }
+// }
+
+// /* Optional: Add active class to the current button (highlight it) */
+// var container = document.getElementById("btnContainer");
+// var btns = container.getElementsByClassName("btn");
+// for (var i = 0; i < btns.length; i++) {
+//   btns[i].addEventListener("click", function() {
+//     var current = document.getElementsByClassName("active");
+//     current[0].className = current[0].className.replace(" active", "");
+//     this.className += " active";
+//   });
+// }
+</script>
+
+</body>
+</html>

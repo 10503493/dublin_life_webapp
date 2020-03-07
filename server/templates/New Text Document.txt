@@ -1,0 +1,3 @@
+sign up page --- mobile number validation?
+password verification double check? email verification...
+for each image product id should be given in alt??? or name ??

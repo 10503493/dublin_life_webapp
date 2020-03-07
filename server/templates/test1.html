@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+div.subgallery
+{
+  margin: 25px;
+  border: 3px solid #ccc;
+  float: left;
+  width: 125px;
+  height: 80px; 
+}
+div.gallerylarge
+{
+  margin: 25px;
+  border: 3px solid #ccc;
+  float: left;
+  width: 500px;
+  height: 333px; 
+}
+div.subgallery:hover 
+{
+  border: 3px solid #777;
+}
+div.detail 
+{
+position: relative;
+}
+</style>
+</head>
+<body>
+<!--  -->
+<!--  -->
+<!-- have to make it center  by div detail-->
+<div class ="detail"> 
+<div class="gallerylarge"> 
+  <img src="p1.jpg" alt="Mountains" id="thumb1">
+</div>
+<div class="subgallery"> 
+  <img src="p1.jpg" alt="Mountains"width="125" height="80"  id="thumb2" onclick="imagechange1()">
+  <img src="p1.jpg" alt="Mountains"width="125" height="80"  id="thumb3" onclick="imagechange2()">
+  <img src="p1.jpg" alt="Mountains"width="125" height="80"  id="thumb4" onclick="imagechange3()">
+  <img src="p1.jpg" alt="Mountains"width="125" height="80"  id="thumb5" onclick="imagechange4()">
+</div>
+<button type="button" class="btn">book now </button><br><br>
+<button type="button" class="btn">call </button><br>
+<button type="button" class="btn">save/remove </button><br>
+<button type="button" class="btn">compare here make this opt in cart </button><br>
+</div>
+
+
+
+<script>
+function imagechange1()
+{
+let obj1 =document.getElementById("thumb1");
+obj1.src=  thumb2.src ;
+console.log("get1")
+}
+function imagechange2()
+{
+let obj1 =document.getElementById("thumb1");
+obj1.src=  thumb3.src ;
+console.log("get2");
+}
+function imagechange3()
+{
+let obj1 =document.getElementById("thumb1");
+obj1.src=  thumb4.src ;
+console.log("get3");
+}
+function imagechange4()
+{
+let obj1 =document.getElementById("thumb1");
+obj1.src=  thumb5.src ;
+console.log("get4");
+}
+</script>
+
+</body>
+
+</html>
