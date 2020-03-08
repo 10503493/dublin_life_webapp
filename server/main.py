@@ -29,7 +29,7 @@ def userdef():
 # def renderusercreation():
 #     return  render_template('user-creation.html')
 
-@app.route('/login', methods=['POST'])
+@app.route('/api/login', methods=['POST'])
 def login():
     usr = request.form.get('uname')
     psd = request.form.get('psw')
@@ -39,10 +39,11 @@ def login():
     data = cur.fetchall()
     print (data)#jkkkkkkkkkkkkkkkkkkkjkjkkkkkkk
     cur.close()
-    if len(data) > 0:
-     return render_template('products.html',useridx = data[0][2])
-    else:
-     return render_template('test1.html')
+    return('okkk')
+    # if len(data) > 0:
+    #  return render_template('products.html',useridx = data[0][2])
+    # else:
+    #  return render_template('test1.html')
     
 @app.route('/signup', methods=['POST'])
 def signup():
