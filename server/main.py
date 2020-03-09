@@ -64,15 +64,18 @@ def login():
     print (usr, psd)#jokkjjjjjjjjmmmjjjjjjjjjjjjjjjjj
     cur = mysql.connection.cursor()
     cur.execute("select * from users where uname=%s and pword=%s",[usr.strip(),psd.strip()])
-    data = cur.fetchall()
+    data = cur.fetchall() 
     print (data)#jkkkkkkkkkkkkkkkkkkkjkjkkkkkkk
     cur.close()
+    print('sql close')
 
     if len(data) > 0:
         return('ok')
+        print('if true')
      #return render_template('products.html',useridx = data[0][2])
     else:
-     return ('no')
+        return ('no')
+        print ('if false')
     
 @app.route('/signup', methods=['POST'])
 def signup():
