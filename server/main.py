@@ -13,11 +13,38 @@ mysql = MySQL(app)
 
 @app.route('/api/', methods=['GET', 'POST'])
 def index():
-    return  ('gg')
+    cur = mysql.connection.cursor()
+    cur.execute("select * from users ")
+    d = cur.fetchall()
+    print (d)#jkkkkkkkkkkkkkkkkkkkjkjkkkkkkk
+    cur.close()
+    return jsonify (d)
 @app.route('/api/userdet', methods=['GET', 'POST'])
 def userdef():
     return  ('testttt')
 
+
+
+
+
+@app.route('/api/register', methods=['POST'])
+def register():
+    fn = request.form.get('fname_r')
+    ln = request.form.get('lname_r')
+    eml = request.form.get('email_r')
+    un = request.form.get('uname_r')
+    ph = request.form.get('phone_r')
+    ad = request.form.get('address_r')
+    pw = request.form.get('psw_r')
+    cur = mysql.connection.cursor()
+    print('brf')
+    cur.execute("insert into users (uname,pword,firstname,lastname,email,address) values (%s,%s,%s,%s,%s,%s)",(un,pw,fn,ln,eml,ad))
+    mysql.connection.commit()
+    cur.close()
+    cur.close()
+    print('donr')
+
+    
 # @app.route('/products', methods=['GET', 'POST'])
 # def products():
 #     return  render_template('products.html')
@@ -29,8 +56,9 @@ def userdef():
 # def renderusercreation():
 #     return  render_template('user-creation.html')
 
-@app.route('/api/login', methods=['POST'])
+@app.route('/api/login', methods=['GET','POST'])
 def login():
+    print("now reached in flask")#kkkkkkkkkkkkkkkkkkk
     usr = request.form.get('uname')
     psd = request.form.get('psw')
     print (usr, psd)#jokkjjjjjjjjmmmjjjjjjjjjjjjjjjjj
@@ -39,11 +67,12 @@ def login():
     data = cur.fetchall()
     print (data)#jkkkkkkkkkkkkkkkkkkkjkjkkkkkkk
     cur.close()
-    return('okkk')
-    # if len(data) > 0:
-    #  return render_template('products.html',useridx = data[0][2])
-    # else:
-    #  return render_template('test1.html')
+
+    if len(data) > 0:
+        return('ok')
+     #return render_template('products.html',useridx = data[0][2])
+    else:
+     return ('no')
     
 @app.route('/signup', methods=['POST'])
 def signup():
