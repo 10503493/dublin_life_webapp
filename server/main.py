@@ -68,14 +68,18 @@ def login():
     print (data)#jkkkkkkkkkkkkkkkkkkkjkjkkkkkkk
     cur.close()
     print('sql close')
+    print (len(data))
 
     if len(data) > 0:
-        return('ok')
         print('if true')
-     #return render_template('products.html',useridx = data[0][2])
+        return ('ok')
+        #return render_template('products.html',useridx = data[0][2])
+        
     else:
-        return ('no')
         print ('if false')
+        return ('no')
+        
+        
     
 @app.route('/signup', methods=['POST'])
 def signup():
