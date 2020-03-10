@@ -71,7 +71,7 @@ def login():
     print (len(data))
 
     if len(data) > 0:
-        print('if true')
+        #print('if true')
         return ('ok')
         #return render_template('products.html',useridx = data[0][2])
         
