@@ -27,6 +27,18 @@ def userdef():
 
 
 
+
+@app.route('/api/user', methods=['GET', 'POST'])
+def usercall():
+    print (un)
+    cur = mysql.connection.cursor()
+    cur.execute("select * from users where uname=%s",un)
+    d = cur.fetchall()
+    print('usercall')
+    print (d)#jkkkkkkkkkkkkkkkkkkkjkjkkkkkkk
+    cur.close()
+    return  jsonify (d)
+################################################
 @app.route('/api/register', methods=['POST'])
 def register():
     fn = request.form.get('fname_r')
@@ -38,11 +50,42 @@ def register():
     pw = request.form.get('psw_r')
     cur = mysql.connection.cursor()
     print('brf')
-    cur.execute("insert into users (uname,pword,firstname,lastname,email,address) values (%s,%s,%s,%s,%s,%s)",(un,pw,fn,ln,eml,ad))
-    mysql.connection.commit()
+    cur.execute("select * from users where uname=%s or email=%s",[un,eml])
+    data = cur.fetchall()
+    print(data)
+    print ("here in reg___")
+    if len(data) == 0:
+        cur.execute("insert into users (uname,pword,firstname,lastname,email,address) values (%s,%s,%s,%s,%s,%s)",(un,pw,fn,ln,eml,ad))
+        mysql.connection.commit()
+        cur.close()
+        print('inserted')
+        return 'ok'
+    else:
+        cur.close()    
+        print('donr---reg already in table not inserted')
+        return 'no'
+#####################################################################
+@app.route('/api/login', methods=['GET','POST'])
+def login():
+    print("now reached in flask")#kkkkkkkkkkkkkkkkkkk
+    usr = request.form.get('uname')
+    psd = request.form.get('psw')
+    print (usr, psd)#jokkjjjjjjjjmmmjjjjjjjjjjjjjjjjj
+    cur = mysql.connection.cursor()
+    cur.execute("select * from users where uname=%s and pword=%s",[usr.strip(),psd.strip()])
+    data = cur.fetchall() 
+    print (data)#jkkkkkkkkkkkkkkkkkkkjkjkkkkkkk
     cur.close()
-    cur.close()
-    print('donr')
+    print('sql close')
+    print (len(data))##khhhhhhhhhhkkkkhkhk
+    if len(data) > 0:
+        #print('if true')
+        return ('ok')
+        #return render_template('products.html',useridx = data[0][2])
+    else:
+        print ('if false')
+        return ('no')
+        
 
     
 # @app.route('/products', methods=['GET', 'POST'])
@@ -56,29 +99,6 @@ def register():
 # def renderusercreation():
 #     return  render_template('user-creation.html')
 
-@app.route('/api/login', methods=['GET','POST'])
-def login():
-    print("now reached in flask")#kkkkkkkkkkkkkkkkkkk
-    usr = request.form.get('uname')
-    psd = request.form.get('psw')
-    print (usr, psd)#jokkjjjjjjjjmmmjjjjjjjjjjjjjjjjj
-    cur = mysql.connection.cursor()
-    cur.execute("select * from users where uname=%s and pword=%s",[usr.strip(),psd.strip()])
-    data = cur.fetchall() 
-    print (data)#jkkkkkkkkkkkkkkkkkkkjkjkkkkkkk
-    cur.close()
-    print('sql close')
-    print (len(data))
-
-    if len(data) > 0:
-        #print('if true')
-        return ('ok')
-        #return render_template('products.html',useridx = data[0][2])
-        
-    else:
-        print ('if false')
-        return ('no')
-        
         
     
 @app.route('/signup', methods=['POST'])
