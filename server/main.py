@@ -7,10 +7,7 @@ app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'root'
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_DB'] = 'web_ise'
-
-
 mysql = MySQL(app)
-
 @app.route('/api/', methods=['GET', 'POST'])
 def index():
     cur = mysql.connection.cursor()
@@ -30,12 +27,13 @@ def userdef():
 
 @app.route('/api/user', methods=['GET', 'POST'])
 def usercall():
-    print (un)
     cur = mysql.connection.cursor()
-    cur.execute("select * from users where uname=%s",un)
+    cur.execute("select * from users where uname='tonydbs'")
     d = cur.fetchall()
+    u=d[0][0]
+    
     print('usercall')
-    print (d)#jkkkkkkkkkkkkkkkkkkkjkjkkkkkkk
+    print (d[0][2])#jkkkkkkkkkkkkkkkkkkkjkjkkkkkkk
     cur.close()
     return  jsonify (d)
 ################################################
