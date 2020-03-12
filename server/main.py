@@ -36,7 +36,19 @@ def usercall():
     print (d[0][2])#jkkkkkkkkkkkkkkkkkkkjkjkkkkkkk
     cur.close()
     return  jsonify (d)
+    
 ################################################
+@app.route('/api/reg', methods=['GET', 'POST'])
+def reg():
+    cur = mysql.connection.cursor()
+    cur.execute("insert into list (uname,pro) value ('toni','car')")
+    mysql.connection.commit()
+    cur.close()
+    print('inserted')
+
+    
+################################################
+
 @app.route('/api/register', methods=['POST'])
 def register():
     fn = request.form.get('fname_r')
