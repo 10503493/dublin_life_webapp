@@ -40,14 +40,28 @@ def usercall():
 ################################################
 @app.route('/api/reg', methods=['GET', 'POST'])
 def reg():
+    usr = request.form.get('uname')
+    print("reg",usr)
     cur = mysql.connection.cursor()
-    cur.execute("insert into list (uname,pro) value ('toni','car')")
+    cur.execute("select * from users where uname=%s ",[usr])
+    data = cur.fetchall()
+    print (data [0][2])
+    cur.execute("insert into admin (uname,phone,email) values (%s,%s,%s)",[data[0][0],data[0][6],data[0][4]])
     mysql.connection.commit()
     cur.close()
     print('inserted')
-
-    
 ################################################
+@app.route('/api/admin', methods=['GET', 'POST'])
+def adm():
+    cur = mysql.connection.cursor()
+    cur.execute("select * from admin ")
+    d = cur.fetchall()
+    print (d)#jkkkkkkkkkkkkkkkkkkkjkjkkkkkkk
+    cur.close()
+    return jsonify (d)
+################################################
+
+
 
 @app.route('/api/register', methods=['POST'])
 def register():
@@ -55,7 +69,7 @@ def register():
     ln = request.form.get('lname_r')
     eml = request.form.get('email_r')
     un = request.form.get('uname_r')
-    ph = request.form.get('phone_r')
+    #ph = request.form.get('phone_r')
     ad = request.form.get('address_r')
     pw = request.form.get('psw_r')
     cur = mysql.connection.cursor()
@@ -63,17 +77,17 @@ def register():
     cur.execute("select * from users where uname=%s or email=%s",[un,eml])
     data = cur.fetchall()
     print(data)
-    print ("here in reg___")
+    print ("here in reg___",len(data))
     if len(data) == 0:
         cur.execute("insert into users (uname,pword,firstname,lastname,email,address) values (%s,%s,%s,%s,%s,%s)",(un,pw,fn,ln,eml,ad))
         mysql.connection.commit()
         cur.close()
         print('inserted')
-        return 'ok'
-    else:
+        return jsonify(data)
+    elif len(data) == 1:
         cur.close()    
         print('donr---reg already in table not inserted')
-        return 'no'
+        return 'jsonify(data)'
 #####################################################################
 @app.route('/api/login', methods=['GET','POST'])
 def login():
@@ -90,11 +104,11 @@ def login():
     print (len(data))##khhhhhhhhhhkkkkhkhk
     if len(data) > 0:
         #print('if true')
-        return ('ok')
+        return( jsonify(data))
         #return render_template('products.html',useridx = data[0][2])
     else:
         print ('if false')
-        return ('no')
+        return (jsonify(data))
         
 
     
