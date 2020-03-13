@@ -69,7 +69,7 @@ def register():
     ln = request.form.get('lname_r')
     eml = request.form.get('email_r')
     un = request.form.get('uname_r')
-    #ph = request.form.get('phone_r')
+    ph = request.form.get('phone_r')
     ad = request.form.get('address_r')
     pw = request.form.get('psw_r')
     cur = mysql.connection.cursor()
@@ -79,7 +79,7 @@ def register():
     print(data)
     print ("here in reg___",len(data))
     if len(data) == 0:
-        cur.execute("insert into users (uname,pword,firstname,lastname,email,address) values (%s,%s,%s,%s,%s,%s)",(un,pw,fn,ln,eml,ad))
+        cur.execute("insert into users (uname,pword,firstname,lastname,email,phone,address) values (%s,%s,%s,%s,%s,%s,%s)",(un,pw,fn,ln,eml,ph,ad))
         mysql.connection.commit()
         cur.close()
         print('inserted')
